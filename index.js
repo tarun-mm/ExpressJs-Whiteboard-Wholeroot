@@ -17,12 +17,12 @@ app.use((req, res, next) => {
 
 const server = http.createServer(app)
 
-const io = new Server(server, {
-    cors: {
-        origin: "https://whole-root.azurewebsites.net/",
-        methods: ["GET", "POST"],
-    }
-})
+// const io = new Server(server, {
+//     cors: {
+//         origin: "https://whole-root.azurewebsites.net/",
+//         methods: ["GET", "POST"],
+//     }
+// })
 
 io.on("connection", socket => {
     console.log(`Connected: ${socket.id}`)
