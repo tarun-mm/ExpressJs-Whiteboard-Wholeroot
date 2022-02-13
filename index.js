@@ -23,7 +23,7 @@ res.send("server");
 
 const io = new Server(server, {
     cors: {
-        origin: "https://whole-root.azurewebsites.net/",
+        origin: "*",
         methods: ["GET", "POST"],
     }
 })
