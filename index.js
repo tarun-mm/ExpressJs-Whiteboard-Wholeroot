@@ -5,7 +5,7 @@ const cors = require('cors')
 const app = express()
 const socketIO = require('socket.io')
 const server = http.createServer(app)
-const io = socketIO(server);
+// const io = socketIO(server);
 
 app.use(cors())
 app.use((req, res, next) => {
@@ -21,12 +21,12 @@ app.get("/", (req, res) => {
 res.send("server");
 });
 
-// const io = new Server(server, {
-//     cors: {
-//         origin: "https://whole-root.azurewebsites.net/",
-//         methods: ["GET", "POST"],
-//     }
-// })
+const io = new Server(server, {
+    cors: {
+        origin: "https://whole-root.azurewebsites.net/",
+        methods: ["GET", "POST"],
+    }
+})
 
 io.on("connection", socket => {
     console.log(`Connected: ${socket.id}`)
